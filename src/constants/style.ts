@@ -26,7 +26,7 @@ export const kTodoContentWrap: CSS.Properties = {
 };
 
 /**
- * TODO
+ * TODO CONTENT
  */
 export const kTodoContentTitle: CSS.Properties = {
   fontSize: '1.6rem'
