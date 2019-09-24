@@ -1,6 +1,5 @@
 import CSS from 'csstype';
 
-
 /**
  * TODO LIST WRAP
  */
@@ -49,16 +48,6 @@ export const kTodoInput: CSS.Properties = {
   width: '400px',
   marginBottom: '10px',
 };
-
-
-/**
- * TODO ADD
- */
-export const kDivider: CSS.Properties = {
-  border: '0 3px 0 0 !important',
-  borderImage: 'linear-gradient(to right, rgba(29,136,247,1) 0%, rgba(255,79,83,1) 100%)',
-  borderImageSlice: '1 !important'
-}
 
 /**
  * TODO TOGGLE

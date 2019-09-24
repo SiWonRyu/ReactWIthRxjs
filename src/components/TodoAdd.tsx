@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { kButton, kTodoInput, kInputFormWrap } from '../constants/style';
-import { TodoItem } from '../models';
 
 interface AddTodoForm {
   addTodo: (content: string) => void;
