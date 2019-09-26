@@ -9,9 +9,10 @@ const TodoPage: React.FC = () => {
   const [todos, setTodos] = useState();
 
   useEffect(() => {
-    const todoData$: Subscription = TodoService.todoData$.subscribe((v: TodoItem[]) => {
-      setTodos(v);
-    });
+    const todoData$: Subscription = TodoService.todoData$
+      .subscribe((v: TodoItem[]) => {
+        setTodos(v);
+      });
     return () => todoData$.unsubscribe();
   }, []);
 

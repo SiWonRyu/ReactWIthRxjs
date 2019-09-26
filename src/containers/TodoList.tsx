@@ -1,13 +1,9 @@
 import React from 'react';
 import { TodoItem } from '../models';
-import TodoDeleteButton from '../components/TodoDelete';
-import TodoAdd from '../components/TodoAdd';
 import Todo from '../components/Todo';
 import { TodoService } from '../services';
-import TodoToggle from '../components/TodoToggle';
-import TodoListWrap from '../components/wrap/TodoListWrap';
-import TodoContentWrap from '../components/wrap/TodoContentWrap';
-import TodoButtonWrap from '../components/wrap/TodoButtonWrap';
+import { kListWrap, kTodoContentWrap, kButtonWrap } from '../constants/style';
+import { TodoWrap, TodoDeleteButton, TodoAdd, TodoToggle } from '../components';
 
 interface TodoListProps {
   todos: TodoItem[];
@@ -20,12 +16,12 @@ const TodoList: React.FC<TodoListProps> = ({ todos }) => {
   const onToggle = (id: number, checked: boolean) => TodoService.toggleIsDone(id, checked);
 
   return (
-    <TodoListWrap>
+    <TodoWrap style={kListWrap}>
       <TodoAdd addTodo={addTodoItem} />
       {!!todos && todos.map((item: TodoItem) =>
-        <TodoContentWrap key={item.id}>
+        <TodoWrap style={kTodoContentWrap} key={item.id}>
           <Todo todoItem={item}></Todo>
-          <TodoButtonWrap>
+          <TodoWrap style={kButtonWrap}>
             <TodoDeleteButton
               onDelete={deleteTodoItem}
               todoId={item.id}
@@ -34,10 +30,10 @@ const TodoList: React.FC<TodoListProps> = ({ todos }) => {
               onToggle={onToggle}
               todo={item}
             ></TodoToggle>
-          </TodoButtonWrap>
-        </TodoContentWrap>
+          </TodoWrap>
+        </TodoWrap>
       )}
-    </TodoListWrap>
+    </TodoWrap>
   )
 }
 

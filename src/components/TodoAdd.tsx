@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { kButton, kTodoInput, kInputFormWrap } from '../constants/style';
 
-interface AddTodoForm {
+interface TodoAddProps {
   addTodo: (content: string) => void;
 }
 
-const AddTodoForm: React.FC<AddTodoForm> = ({ addTodo }) => {
+const TodoAdd: React.FC<TodoAddProps> = ({ addTodo }) => {
   const [content, setContent] = useState('');
   const changeContent = (event: any) => setContent(event.target.value);
   const submit = (event: any) => {
@@ -30,4 +30,4 @@ const AddTodoForm: React.FC<AddTodoForm> = ({ addTodo }) => {
   )
 }
 
-export default React.memo(AddTodoForm);
+export default React.memo(TodoAdd);
